@@ -4,23 +4,28 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.dp
+import theme.Dimens.SpaceXLarge
 
 @Composable
 internal fun MapComponent() {
     Card(
-        shape = RoundedCornerShape(bottomStart = 32.dp, bottomEnd = 32.dp),
-        backgroundColor = Color.Green
-
+        shape = RoundedCornerShape(
+            bottomStart = SpaceXLarge,
+            bottomEnd = SpaceXLarge,
+        ),
+        colors = CardDefaults.cardColors(containerColor = Color.Green),
     ) {
         Box(
             modifier = Modifier
-                .fillMaxHeight(0.4f)
+                .fillMaxHeight(MAP_HEIGHT_FACTOR)
                 .fillMaxWidth()
         )
     }
 }
+
+private const val MAP_HEIGHT_FACTOR = 0.4f

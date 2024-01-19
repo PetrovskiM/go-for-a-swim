@@ -3,20 +3,23 @@ import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
+import components.Spacer
 import presentation.components.MapComponent
+import presentation.components.WaterInformation
+import theme.AppTheme
+import theme.Dimens.Space
+import theme.Dimens.SpaceXLarge
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun App() {
-    MaterialTheme {
+    AppTheme {
         Scaffold {
-            val insets = PaddingValues(top = 32.dp)
+            val insets = PaddingValues(top = SpaceXLarge)
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -24,6 +27,8 @@ fun App() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 MapComponent()
+                Spacer(height = Space)
+                WaterInformation("22.4")
             }
         }
     }
