@@ -7,28 +7,28 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import components.Spacer
-import presentation.components.MapComponent
-import presentation.components.WaterInformation
+import org.koin.compose.KoinApplication
+import org.koin.compose.KoinContext
+import org.koin.core.context.KoinContext
+import presentation.HomeScreen
 import theme.AppTheme
-import theme.Dimens.Space
 import theme.Dimens.SpaceXLarge
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun App() {
-    AppTheme {
-        Scaffold {
-            val insets = PaddingValues(top = SpaceXLarge)
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .consumeWindowInsets(insets),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                MapComponent()
-                Spacer(height = Space)
-                WaterInformation("22.4")
+internal fun App() {
+    KoinContext {
+        AppTheme {
+            Scaffold {
+                val insets = PaddingValues(top = SpaceXLarge)
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .consumeWindowInsets(insets),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    HomeScreen()
+                }
             }
         }
     }

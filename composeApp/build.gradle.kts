@@ -5,20 +5,23 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.skie)
 }
 
 kotlin {
-    @OptIn(ExperimentalWasmDsl::class)
-    wasmJs {
-        moduleName = "composeApp"
-        browser {
-            commonWebpackConfig {
-                outputFileName = "composeApp.js"
+    //Excluding wasm for now as Koin has no support
+    //Can be worked around with a manual ServiceLocator
+    /*    @OptIn(ExperimentalWasmDsl::class)
+        wasmJs {
+            moduleName = "composeApp"
+            browser {
+                commonWebpackConfig {
+                    outputFileName = "composeApp.js"
+                }
             }
-        }
-        binaries.executable()
-    }
-    
+            binaries.executable()
+        }*/
+
     androidTarget {
         compilations.all {
             kotlinOptions {
@@ -26,7 +29,7 @@ kotlin {
             }
         }
     }
-    
+
     listOf(
         iosArm64(),
         iosSimulatorArm64()
@@ -36,21 +39,22 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     sourceSets {
-        
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
         }
         commonMain.dependencies {
+            implementation(project(":core:ui"))
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material3)
             implementation(compose.ui)
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
-            implementation(project(":core:ui"))
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
         }
     }
 }
