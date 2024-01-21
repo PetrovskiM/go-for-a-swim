@@ -56,6 +56,9 @@ kotlin {
             implementation(compose.components.resources)
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
+            implementation(libs.coil)
+            implementation(libs.coil.compose)
+            implementation(libs.coil.network)
         }
     }
 }
