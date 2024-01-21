@@ -11,8 +11,8 @@ import org.koin.compose.KoinApplication
 import org.koin.compose.KoinContext
 import org.koin.core.context.KoinContext
 import presentation.HomeScreen
-import theme.AppTheme
-import theme.Dimens.SpaceXLarge
+import com.gfas.core.ui.theme.AppTheme
+import com.gfas.core.ui.theme.Dimens.SpaceXLarge
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

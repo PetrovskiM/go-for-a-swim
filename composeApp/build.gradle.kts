@@ -46,7 +46,8 @@ kotlin {
             implementation(libs.androidx.activity.compose)
         }
         commonMain.dependencies {
-            implementation(project(":core:ui"))
+            implementation(projects.core.ui)
+            implementation(projects.core.network)
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material3)
