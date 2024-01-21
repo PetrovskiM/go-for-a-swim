@@ -1,4 +1,4 @@
-package res
+package com.gfas.core.ui.res
 
 object Drawables {
     const val IC_SWIM = "ic_swim.xml"

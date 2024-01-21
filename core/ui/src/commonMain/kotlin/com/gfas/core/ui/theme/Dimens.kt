@@ -1,4 +1,4 @@
-package theme
+package com.gfas.core.ui.theme
 
 import androidx.compose.ui.unit.dp
 

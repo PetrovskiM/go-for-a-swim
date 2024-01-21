@@ -1,4 +1,4 @@
-package components
+package com.gfas.core.ui.components
 
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width

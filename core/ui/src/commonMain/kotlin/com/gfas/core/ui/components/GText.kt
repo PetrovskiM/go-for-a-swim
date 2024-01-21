@@ -1,4 +1,4 @@
-package components
+package com.gfas.core.ui.components
 
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.Text

@@ -9,7 +9,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import theme.Dimens.SpaceXLarge
+import com.gfas.core.ui.theme.Dimens.SpaceXLarge
 
 @Composable
 internal fun MapComponent() {

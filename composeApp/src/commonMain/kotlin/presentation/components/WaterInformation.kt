@@ -15,21 +15,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
-import components.GText.BodyLarge
-import components.GText.BodyMedium
-import components.Spacer
+import com.gfas.core.ui.components.GText.BodyLarge
+import com.gfas.core.ui.components.GText.BodyMedium
+import com.gfas.core.ui.components.Spacer
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
-import res.Drawables
-import theme.Dimens.Space
-import theme.Dimens.SpaceMedium
-import theme.Dimens.SpaceSmall
+import com.gfas.core.ui.res.Drawables
+import com.gfas.core.ui.theme.Dimens.Space
+import com.gfas.core.ui.theme.Dimens.SpaceMedium
+import com.gfas.core.ui.theme.Dimens.SpaceSmall
 
 @Composable
 internal fun WaterInformation(
     temperature: String,
-    shouldSwim: String,
-    whenCanSwim: String,
+    canSwim: String,
+    swimableOn: String,
 ) {
     LazyRow(
         modifier = Modifier
@@ -46,14 +46,14 @@ internal fun WaterInformation(
         item {
             InfoComponent(
                 title = "Swim?",
-                value = shouldSwim,
+                value = canSwim,
                 icon = Drawables.IC_SWIM
             )
         }
         item {
             InfoComponent(
                 title = "Swimable on?",
-                value = whenCanSwim,
+                value = swimableOn,
                 icon = Drawables.IC_CALENDAR
             )
         }
