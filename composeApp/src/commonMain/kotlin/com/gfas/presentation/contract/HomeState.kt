@@ -1,4 +1,4 @@
-package presentation.contract
+package com.gfas.presentation.contract
 
 internal sealed class HomeState(open val isLoading: Boolean = false) {
 

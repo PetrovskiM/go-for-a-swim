@@ -1,9 +1,9 @@
-package di
+package com.gfas.di
 
-import data.SwimApi
-import domain.SwimRepository
+import com.gfas.data.SwimApi
+import com.gfas.domain.SwimRepository
 import org.koin.dsl.module
-import presentation.HomeViewModel
+import com.gfas.presentation.HomeViewModel
 
 val sharedModule = module {
     factory { SwimApi(networkClient = get()) }

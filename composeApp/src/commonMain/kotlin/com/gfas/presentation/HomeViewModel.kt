@@ -1,13 +1,13 @@
-package presentation
+package com.gfas.presentation
 
-import domain.SwimRepository
+import com.gfas.domain.SwimRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import presentation.contract.HomeState
+import com.gfas.presentation.contract.HomeState
 
 internal class HomeViewModel(private val swimRepository: SwimRepository) {
 

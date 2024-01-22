@@ -2,7 +2,7 @@ package com.gfas
 
 import android.app.Application
 import com.gfas.core.network.di.networkModule
-import di.sharedModule
+import com.gfas.di.sharedModule
 import org.koin.core.context.startKoin
 
 class Application : Application() {

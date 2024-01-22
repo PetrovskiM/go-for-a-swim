@@ -1,4 +1,4 @@
-package data
+package com.gfas.data
 
 import com.gfas.core.network.NetworkClient
 import io.ktor.client.request.get

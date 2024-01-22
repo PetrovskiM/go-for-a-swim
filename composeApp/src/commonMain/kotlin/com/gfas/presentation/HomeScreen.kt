@@ -1,4 +1,4 @@
-package presentation
+package com.gfas.presentation
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.layout.Box
@@ -16,11 +16,11 @@ import androidx.compose.ui.Modifier
 import com.gfas.core.ui.components.GText
 import com.gfas.core.ui.components.Spacer
 import org.koin.compose.koinInject
-import presentation.components.MapComponent
-import presentation.components.WaterInformation
-import presentation.contract.HomeState
-import presentation.contract.HomeState.InitialState
-import presentation.contract.HomeState.MappedState
+import com.gfas.presentation.components.MapComponent
+import com.gfas.presentation.components.WaterInformation
+import com.gfas.presentation.contract.HomeState
+import com.gfas.presentation.contract.HomeState.InitialState
+import com.gfas.presentation.contract.HomeState.MappedState
 import com.gfas.core.ui.theme.Dimens
 
 @Composable
@@ -61,7 +61,9 @@ private fun InitialComponent(state: InitialState) {
 
 @Composable
 private fun MappedComponent(state: MappedState) {
-    MapComponent()
+    MapComponent(
+        mapUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8yq7bQZudBBFOLRfn9pDxuXB7nGFAj5oTPg&usqp=CAU"
+    )
     Spacer(height = Dimens.Space)
     GoForASwimButton(onClick = {})
     WaterInformation(
